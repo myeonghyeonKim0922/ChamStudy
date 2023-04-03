@@ -112,7 +112,7 @@ public class AdminCommController { // 관리자 커뮤니티 게시판
 	public String rateHandler(HttpServletRequest request) {
 		//상세 페이지에 들어오면 전 페이지의 링크를 가져온다.
 		String referer = request.getParameter("referer");
-		String link = referer.replace("http://localhost/adminForm/", "");
+		String link = referer.replace("http://52.78.82.19/adminForm/", "");
 		//전 페이지의 링크를 redirect로 줘서 돌아가기 버튼 누르면 바로 전 페이지로 이동한다.
 	    return "redirect:/adminForm/" + link;
 	}

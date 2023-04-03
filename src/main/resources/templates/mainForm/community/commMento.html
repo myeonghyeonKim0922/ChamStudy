@@ -53,7 +53,7 @@
 					<button id="searchBtn" type="submit" class="search-btn"
 						style="height: 100%;">검색</button>
 						<div class="mento-write" th:if="${not #lists.isEmpty(classNameDto)}">
-						<button id="mento-write-btn" class="btn btn-primary" type="button" onclick="location.href='/comm/Mentocreate'">멘토 신청</button>
+						<button id="mento-write-btn" class="btn btn-primary" type="button" onclick="location.href='/comm/mento/create'">멘토 신청</button>
 					</div>
 				</form>
 			</div>
@@ -61,7 +61,7 @@
 				<div class="boards">
 					<th:block class="comm-each-wrap" th:each="comm, status: ${comms}">
 						<div class="each">
-							<div class="comm-wrap" th:onclick="|location.href='@{/comm/dtl/mento/}'+${comm.id}|">
+							<div class="comm-wrap" th:onclick="|location.href='@{/comm/mento/dtl/}'+${comm.id}|">
 								<div class="comm-li1">
 									<a class="comm-wrap-a2" style="color: black; text-decoration: none;"  th:href="'/comm/dtl/mento/'+${comm.id}">[[${comm.Title}]]</a>
 								</div>

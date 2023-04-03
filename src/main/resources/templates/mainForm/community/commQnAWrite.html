@@ -105,13 +105,13 @@ function valinput() {
 
 			<div class="btn-wrap">
 				<div th:if="${#strings.isEmpty(commWriteFormDto.id)}">
-					<button th:formaction="@{/comm/QnAcreate}" type="submit"
+					<button th:formaction="@{/comm/qna/create}" type="submit"
 						onclick="valinput()" class="btn btn-primary" name="save">저장</button>
 				</div>
 
 				<div th:unless="${#strings.isEmpty(commWriteFormDto.id)}">
 					<button
-						th:formaction="@{'/comm/QnAUpdate/' + ${commWriteFormDto.id} }"
+						th:formaction="@{'/comm/qna/Update/' + ${commWriteFormDto.id} }"
 						type="submit" class="btn btn-primary" name="modify">수정</button>
 				</div>
 
