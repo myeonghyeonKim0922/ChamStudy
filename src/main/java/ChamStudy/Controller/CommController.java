@@ -148,7 +148,7 @@ public class CommController { //커뮤니티 컨트롤러
 				String email = SecurityContextHolder.getContext().getAuthentication().getName();
 				List<CommMentoClassNameDto> classNameDto = commService.getMentoClassName(email);
 				try {
-					CommWriteFormDto writeFormDto = commService.getMentoUpdate(boardId);
+					CommWriteFormDto writeFormDto = commService.getUpdate(boardId);
 					model.addAttribute("commWriteFormDto",writeFormDto);
 					model.addAttribute("className", classNameDto);
 					model.addAttribute("comm", commDto);
@@ -163,12 +163,9 @@ public class CommController { //커뮤니티 컨트롤러
 			@GetMapping(value="/comm/update/{boardId}")
 			public String boardUpdate(@PathVariable("boardId") Long boardId,Model model) {
 				CommDto commDto = commService.getcommDto(boardId);
-				String email = SecurityContextHolder.getContext().getAuthentication().getName();
-				List<CommMentoClassNameDto> classNameDto = commService.getMentoClassName(email);
 				try {
-					CommWriteFormDto writeFormDto = commService.getMentoUpdate(boardId);
+					CommWriteFormDto writeFormDto = commService.getUpdate(boardId);
 					model.addAttribute("commWriteFormDto",writeFormDto);
-					model.addAttribute("className", classNameDto);
 					model.addAttribute("comm", commDto);
 				}catch(EntityNotFoundException e) {
 					model.addAttribute("errorMessage","존재하지 않는 스토리입니다.");
@@ -184,7 +181,7 @@ public class CommController { //커뮤니티 컨트롤러
 				String email = SecurityContextHolder.getContext().getAuthentication().getName();
 				List<CommMentoClassNameDto> classNameDto = commService.getMentoClassName(email);
 				try {
-					CommWriteFormDto writeFormDto = commService.getMentoUpdate(boardId);
+					CommWriteFormDto writeFormDto = commService.getUpdate(boardId);
 					model.addAttribute("commWriteFormDto",writeFormDto);
 					model.addAttribute("className", classNameDto);
 					model.addAttribute("comm", commDto);

@@ -191,7 +191,7 @@ public class CommService { // 관리자 커뮤니티 게시판 서비스
 	}
 
 	//멘토 페이지 수정 저장
-	public CommWriteFormDto getMentoUpdate(Long boardId) {
+	public CommWriteFormDto getUpdate(Long boardId) {
 		Comm_Board board = commRepository.findById(boardId).orElseThrow();
 		
 		CommWriteFormDto commWriteFormDto = CommWriteFormDto.of(board);
